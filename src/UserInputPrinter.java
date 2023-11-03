@@ -1,11 +1,20 @@
 import java.util.Scanner;
 
 public class UserInputPrinter {
+    private Scanner scanner;
+
+    public UserInputPrinter() {
+        this.setScanner(new Scanner(System.in));
+    }
+
+    public void setScanner(Scanner scanner) {
+        this.scanner = scanner;
+    }
+
     private String readUserInput() {
-        Scanner sc = new Scanner(System.in);
         System.out.print("\nType in your input (type STOP to exit): ");
 
-        return sc.nextLine();
+        return this.scanner.nextLine();
     }
 
     public void readAndPrintUserInputInALoop() {
